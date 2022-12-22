@@ -29,7 +29,7 @@ const Body = () => {
   const getUsers = async () => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_API_BASE_URL}/admin/inactive_users`
+        `${import.meta.env.VITE_API_BASE_URL}/admin/inactive_users`
       );
 
       setUsers(response.data.users);
@@ -45,7 +45,7 @@ const Body = () => {
   const approveAccount = async (e, index) => {
     try {
       await axios.patch(
-        `${process.env.REACT_APP_API_BASE_URL}/admin/activate_user/${index}`
+        `${import.meta.env.VITE_API_BASE_URL}/admin/activate_user/${index}`
       );
 
       setShowAlert(true);
