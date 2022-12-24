@@ -90,10 +90,6 @@ const Body = () => {
           <RefreshIcon />
         </IconButton>
 
-        {messages.map((el) => (
-          <p>{el}</p>
-        ))}
-
         {users && (
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
