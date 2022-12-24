@@ -45,7 +45,10 @@ const Body = () => {
   const approveAccount = async (e, index) => {
     try {
       await axios.patch(
-        `${import.meta.env.VITE_API_BASE_URL}/admin/activate_user/${index}`
+        `${import.meta.env.VITE_API_BASE_URL}/admin/activate_user`,
+        {
+          id: index,
+        }
       );
 
       setShowAlert(true);
@@ -86,6 +89,10 @@ const Body = () => {
         <IconButton onClick={(e) => getUsers()}>
           <RefreshIcon />
         </IconButton>
+
+        {messages.map((el) => (
+          <p>{el}</p>
+        ))}
 
         {users && (
           <TableContainer component={Paper}>
